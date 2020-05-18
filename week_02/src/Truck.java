@@ -18,11 +18,10 @@ package Git.GitHub.NMID.week_02.src;
  * 二、 要求
  * 1， 面向对象，低耦合高内聚
  * 2. 声明定义分离
- *
  */
 public class Truck {
     //构造 get
-    private int id ;                   //1. 序号 id
+    private int id;                   //1. 序号 id
     private String name;               //2. 名称 name
     private int price;                 //3. 价格 price
     private float mixNumberLoad;         //4. 最大载货（吨） mixNumberLoad
@@ -35,9 +34,9 @@ public class Truck {
     /**
      * 构造函数，
      *
-     * @param id 1. 序号 id
-     * @param name 2. 名称 name
-     * @param price 3. 价格 price
+     * @param id            1. 序号 id
+     * @param name          2. 名称 name
+     * @param price         3. 价格 price
      * @param mixNumberLoad 4. 最大载货（吨） mixNumberLoad
      */
     public Truck(int id, String name, int price, float mixNumberLoad) {
@@ -48,13 +47,14 @@ public class Truck {
         typeOfCar = "载货车";
     }
 
-    public int getTotalPrice(){
-        return price*numberOfCars*rentalDays;
+    public int getTotalPrice() {
+        return price * numberOfCars * rentalDays;
     }
+
     //展示 车辆序号 id、名称(name)、费用(price)、载人（货）能力
     @Override
     public String toString() {
-        return "车辆序号: "+id+"、名称: "+name+"、费用: "+price+"、载货最大重量量："+mixNumberLoad;
+        return "车辆序号: " + id + "、名称: " + name + "、费用: " + price + "、载货最大重量量：" + mixNumberLoad;
     }
 //------------------------------getter（） setter（）-------------------
 

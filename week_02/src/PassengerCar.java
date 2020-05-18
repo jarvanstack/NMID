@@ -18,11 +18,10 @@ package Git.GitHub.NMID.week_02.src;
  * 二、 要求
  * 1， 面向对象，低耦合高内聚
  * 2. 声明定义分离
- *
  */
-public class PassengerCar  {
+public class PassengerCar {
     //构造
-    private int id ;                   //1. 序号 id
+    private int id;                   //1. 序号 id
     private String name;               //2. 名称 name
     private int price;                 //3. 价格 price
     private int mixNumberPeople;       //4. 最大载人数量 mixNumberPeople
@@ -34,6 +33,7 @@ public class PassengerCar  {
 
     /**
      * 构造函数，
+     *
      * @param id
      * @param name
      * @param price
@@ -46,13 +46,15 @@ public class PassengerCar  {
         this.mixNumberPeople = mixNumberPeople;
         typeOfCar = "载客车";
     }
-    public int getTotalPrice(){
-        return price*numberOfCars*rentalDays;
+
+    public int getTotalPrice() {
+        return price * numberOfCars * rentalDays;
     }
+
     //展示 车辆序号 id、名称(name)、费用(price)、载人（货）能力
     @Override
     public String toString() {
-        return "车辆序号: "+id+"、名称: "+name+"、费用: "+price+"、载人最大数量："+mixNumberPeople;
+        return "车辆序号: " + id + "、名称: " + name + "、费用: " + price + "、载人最大数量：" + mixNumberPeople;
     }
     //------------------------------getter（） setter（）-------------------
 
