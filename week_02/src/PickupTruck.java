@@ -26,7 +26,7 @@ public class PickupTruck {
     private int id ;                   //1. 序号 id
     private String name;               //2. 名称 name
     private int price;                 //3. 价格 price
-    private int mixNumberLoad;         //4.1 最大载货（吨） mixNumberLoad
+    private float mixNumberLoad;         //4.1 最大载货（吨） mixNumberLoad
     private int mixNumberPeople;        //4.2 最大载人数
     //非构造
     private String typeOfCar;          //5. 类型（载客车，载货车，皮卡车.）typeOfCar
@@ -43,7 +43,7 @@ public class PickupTruck {
      * @param mixNumberLoad 4. 最大载货（吨） mixNumberLoad
      * @param mixNumberPeople 4.2 最大载人数
      */
-    public PickupTruck(int id, String name, int price, int mixNumberLoad,int mixNumberPeople) {
+    public PickupTruck(int id, String name, int price, float mixNumberLoad,int mixNumberPeople) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -91,7 +91,7 @@ public class PickupTruck {
         this.price = price;
     }
 
-    public int getMixNumberLoad() {
+    public float getMixNumberLoad() {
         return mixNumberLoad;
     }
 

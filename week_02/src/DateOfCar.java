@@ -9,11 +9,11 @@ public class DateOfCar {
     public   PassengerCar 小轿车     = new PassengerCar(1,"小轿车",40,4);
     public   PassengerCar 面包车     = new PassengerCar(2,"面包车",65,7);
     public   PassengerCar 大巴车     = new PassengerCar(3,"大巴车",180,20);
-    public   PassengerCar 低栏车     = new PassengerCar(4,"低栏车",30,4);
-    public   PassengerCar 高栏车     = new PassengerCar(5,"高栏车",47,4);
-    public   PassengerCar 厢式车     = new PassengerCar(6,"厢式车",80,4);
-    public   PassengerCar 日式皮卡车 = new PassengerCar(7,"日式皮卡车",60,4);
-    public   PassengerCar 美式皮卡车 = new PassengerCar(8,"美式皮卡车",60,4);
+    public   Truck 低栏车     = new Truck(4,"低栏车",30, 1.5f);
+    public   Truck 高栏车     = new Truck(5,"高栏车",47,  2.5f);
+    public   Truck 厢式车     = new Truck(6,"厢式车",80,4.5f);
+    public   PickupTruck 日式皮卡车 = new PickupTruck(7,"日式皮卡车",60,1.0f,5);
+    public   PickupTruck 美式皮卡车 = new PickupTruck(8,"美式皮卡车",60,3.0f,2);
     public  HashMap<Integer, Object> allCars = new HashMap();
 
 

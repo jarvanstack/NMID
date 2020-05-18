@@ -25,7 +25,7 @@ public class Truck {
     private int id ;                   //1. 序号 id
     private String name;               //2. 名称 name
     private int price;                 //3. 价格 price
-    private int mixNumberLoad;         //4. 最大载货（吨） mixNumberLoad
+    private float mixNumberLoad;         //4. 最大载货（吨） mixNumberLoad
     //非构造
     private String typeOfCar;          //5. 类型（载客车，载货车，皮卡车.）typeOfCar
     private int numberOfCars;  //6. 个数 numberOfCars
@@ -40,7 +40,7 @@ public class Truck {
      * @param price 3. 价格 price
      * @param mixNumberLoad 4. 最大载货（吨） mixNumberLoad
      */
-    public Truck(int id, String name, int price, int mixNumberLoad) {
+    public Truck(int id, String name, int price, float mixNumberLoad) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -58,6 +58,10 @@ public class Truck {
     }
 //------------------------------getter（） setter（）-------------------
 
+
+    public float getMixNumberLoad() {
+        return mixNumberLoad;
+    }
 
     public int getId() {
         return id;
@@ -81,10 +85,6 @@ public class Truck {
 
     public void setPrice(int price) {
         this.price = price;
-    }
-
-    public int getMixNumberLoad() {
-        return mixNumberLoad;
     }
 
     public void setMixNumberLoad(int mixNumberLoad) {
@@ -113,6 +113,10 @@ public class Truck {
 
     public void setRentalDays(int rentalDays) {
         this.rentalDays = rentalDays;
+    }
+
+    public void setMixNumberLoad(float mixNumberLoad) {
+        this.mixNumberLoad = mixNumberLoad;
     }
 
     public void setTotalPrice(int totalPrice) {

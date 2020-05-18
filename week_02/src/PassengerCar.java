@@ -20,7 +20,7 @@ package Git.GitHub.NMID.week_02.src;
  * 2. 声明定义分离
  *
  */
-public class PassengerCar {
+public class PassengerCar  {
     //构造
     private int id ;                   //1. 序号 id
     private String name;               //2. 名称 name
