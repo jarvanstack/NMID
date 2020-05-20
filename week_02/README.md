@@ -118,3 +118,7 @@ Process finished with exit code 0
 
 ### 二、类图：
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200518195224164.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
+
+### 三、待解决的问题：
+
+1.逻辑层的实现并没有实现可拓展性,HashMap 储值后就，必须使用相应的序号拿出，而不是通过自动的比较,导致数据层就白搭了.
