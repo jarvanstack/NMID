@@ -95,7 +95,10 @@ public class BuyCars {
             //各个车辆的租用数目（分行列出，数目为0不用列出）
             if (vehicle.getNumberOfCars() > 0) {
                 count++;
-                System.out.println(count + ". 车辆名称: " + vehicle.getName() + "、数量：" + vehicle.getNumberOfCars() + "、租期：" + vehicle.getRentalDays() + "、此类型总费用: " + vehicle.getPrice());
+                System.out.println(count + ". 车辆名称: " + vehicle.getName() + "、" +
+                        "数量：" + vehicle.getNumberOfCars() +
+                        "、租期：" + vehicle.getRentalDays() +
+                        "、此类型总费用: " + vehicle.getTotalPrice());
             }
         }
         System.out.println("总体租用车辆总数: " + totalNumberOfCars + "（辆）");

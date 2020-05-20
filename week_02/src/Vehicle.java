@@ -1,5 +1,9 @@
 package Git.GitHub.NMID.week_02.src;
 
+/**
+ * 实体层：
+ * 车的实体.包含车的各种属性.
+ */
 public class Vehicle {
     //构造 get
     private int id;                   //1. 序号 id
@@ -88,7 +92,7 @@ public class Vehicle {
     }
 
     public float getMixNumberLoad() {
-        return mixNumberLoad;
+        return mixNumberLoad * numberOfCars;
     }
 
     public void setMixNumberLoad(int mixNumberLoad) {
@@ -96,7 +100,7 @@ public class Vehicle {
     }
 
     public int getMixNumberPeople() {
-        return mixNumberPeople;
+        return mixNumberPeople * numberOfCars;
     }
 
     public void setMixNumberPeople(int mixNumberPeople) {
