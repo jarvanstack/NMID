@@ -27,6 +27,7 @@ public class BuyCars {
         for (Integer key : keySet) {
             System.out.println(allCars.get(key));
         }
+        System.out.println("多次选择重复的车会自动为您累加车辆和租期");
     }
 
     /**
@@ -47,27 +48,19 @@ public class BuyCars {
             numberOfCars = scanner.nextInt();
             System.out.println("请输入你租借的车的时间(天数)，回车确认");
             rentalDays = scanner.nextInt();
-            if (id <= 0 || id > 8 || numberOfCars < 0 || rentalDays < 0) {
+            if (allCars.keySet().contains(id)) {
+                Vehicle vehicle = (Vehicle) allCars.get(id);
+                vehicle.addNumberOfCars(numberOfCars);
+                vehicle.addRentalDays(rentalDays);
+                System.out.println("恭喜，订购成功！");
+                System.out.println("序号：" + id + "、数量：" + numberOfCars + "、租期：" + rentalDays);
+                System.out.println("---");
+                System.out.println("您要继续借车么(y/n)?");
+                isContinue = scanner.next().toLowerCase().charAt(0) == 'y';
+
+            } else {
                 System.out.println("你输入的数据有误");
-                continue;
-            } else if (id <= 3) {
-                PassengerCar passengerCar = (PassengerCar) allCars.get(id);
-                passengerCar.setNumberOfCars(numberOfCars);
-                passengerCar.setRentalDays(rentalDays);
-            } else if (id > 3 && id <= 6) {
-                Truck truck = (Truck) allCars.get(id);
-                truck.setNumberOfCars(numberOfCars);
-                truck.setRentalDays(rentalDays);
-            } else if (id > 6 && id <= 8) {
-                PickupTruck pickupTruck = (PickupTruck) allCars.get(id);
-                pickupTruck.setNumberOfCars(numberOfCars);
-                pickupTruck.setRentalDays(rentalDays);
             }
-            System.out.println("恭喜，订购成功！");
-            System.out.println("序号：" + id + "、数量：" + numberOfCars + "、租期：" + rentalDays);
-            System.out.println("---");
-            System.out.println("您要继续借车么(y/n)?");
-            isContinue = scanner.next().toLowerCase().charAt(0) == 'y';
         }
 
     }
@@ -90,38 +83,20 @@ public class BuyCars {
         //5.总体租车费用，
         int totalTotalPrice = 0;
         Set<Integer> keySet = allCars.keySet();
-        for (Integer key : keySet) {
-            if (key <= 3) {
-
-                PassengerCar passengerCar = (PassengerCar) allCars.get(key);
-                //1.各个车辆的租用数目（分行列出，数目为0不用列出）
-                if (passengerCar.getNumberOfCars() > 0) {
-                    System.out.println(key + "号" + passengerCar.getTypeOfCar() + " 数量: " + passengerCar.getNumberOfCars() + "，租期：" + passengerCar.getRentalDays() + "（天），租金：" + passengerCar.getTotalPrice() + "（元）");
-                    totalNumberOfCars += passengerCar.getNumberOfCars();
-                    totalMaxPeopel += passengerCar.getMixNumberPeople();
-                    totalTotalPrice += passengerCar.getTotalPrice();
-                }
-            } else if (key > 3 && key < 7) {
-                Truck truck = (Truck) allCars.get(key);
-                //各个车辆的租用数目（分行列出，数目为0不用列出）
-                if (truck.getNumberOfCars() > 0) {
-                    System.out.println(key + "号" + truck.getTypeOfCar() + " 数量: " + truck.getNumberOfCars() + "，租期：" + truck.getRentalDays() + "，租金：" + truck.getTotalPrice() + "（元）");
-                    totalNumberOfCars += truck.getNumberOfCars() * truck.getNumberOfCars();
-                    totalMaxLoad += truck.getMixNumberLoad() * truck.getNumberOfCars();
-                    totalTotalPrice += truck.getTotalPrice() * truck.getNumberOfCars();
-                }
-            } else if (key <= 8) {
-                PickupTruck pickupTruck = (PickupTruck) allCars.get(key);
-                //各个车辆的租用数目（分行列出，数目为0不用列出）
-                if (pickupTruck.getNumberOfCars() > 0) {
-                    System.out.println(key + "号" + pickupTruck.getTypeOfCar() + " 数量: " + pickupTruck.getNumberOfCars() + "，租期：" + pickupTruck.getRentalDays() + "，租金：" + pickupTruck.getTotalPrice() + "（元）");
-                    totalNumberOfCars += pickupTruck.getNumberOfCars();
-                    totalMaxPeopel += pickupTruck.getMixNumberLoad();
-                    totalMaxLoad += pickupTruck.getMixNumberLoad();
-                    totalTotalPrice += pickupTruck.getTotalPrice();
-                }
+        System.out.println("各个车辆的租用数目清单：");
+        System.out.println();
+        int count = 0;
+        for (Integer integer : keySet) {
+            Vehicle vehicle = (Vehicle) allCars.get(integer);
+            totalNumberOfCars += vehicle.getNumberOfCars();//总体租用车辆总数:
+            totalMaxPeopel += vehicle.getMixNumberPeople();//总体租车的最大载人
+            totalMaxLoad += vehicle.getMixNumberLoad();//总体租车的最大载货
+            totalTotalPrice += vehicle.getTotalPrice();//总体租车费用: "
+            //各个车辆的租用数目（分行列出，数目为0不用列出）
+            if (vehicle.getNumberOfCars() > 0) {
+                count++;
+                System.out.println(count + ". 车辆名称: " + vehicle.getName() + "、数量：" + vehicle.getNumberOfCars() + "、租期：" + vehicle.getRentalDays() + "、此类型总费用: " + vehicle.getPrice());
             }
-
         }
         System.out.println("总体租用车辆总数: " + totalNumberOfCars + "（辆）");
         System.out.println("总体租车的最大载人: " + totalMaxPeopel + "（个）");

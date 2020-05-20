@@ -1,15 +1,16 @@
 
 ### 一、实现步骤
 #### 1.汽车类实体层 
-1.PassergerCar
+Vehicle类.
 ```
- * #### 1.载客车 PassengerCar
+ * #### 1.
  * 储存 以下字段
  * 构造
  * 1. 序号 id
  * 2. 名称 name
  * 3. 价格 price
- * 4. 最大载人数量 numbersOfPeopleEachCar
+ * 4. 最大载货物数量 mixNumberLoad
+ * 4.2 最大载人数量 mixNumberPeople
  * 5. 类型（载客车，载货车，皮卡车.）typeOfCar
  * -------------------
  * 非构造
@@ -18,103 +19,21 @@
  * 8. 总价格.  totalPrice
  * `
 ```
-2.Truck
-```
- * #### 2. 载货卡车 Truck
- * 储存 以下字段
- * 构造
- * 1. 序号 id
- * 2. 名称 name
- * 3. 价格 price
- * 4. 最大载货（吨） mixNumberLoad
- * 5. 类型（载客车，载货车，皮卡车.）typeOfCar
- * -------------------
- * 非构造
- * 6. 个数 numberOfCars
- * 7. 租车天数  rentalDays
- * 8. 总价格.  totalPrice
- * 二、 要求
- * 1， 面向对象，低耦合高内聚
- * 2. 声明定义分离
-```
+#### 2. 数据层 DateOfCar
 
-3.PickupTruck 
+用来储存，车的数据，放入一个HashMap里面.
 
-```
- * #### 2. 皮卡车 PickupTruck
- * 储存 以下字段
- * 构造
- * 1. 序号 id
- * 2. 名称 name
- * 3. 价格 price
- * 4. 最大载货（吨） mixNumberLoad
- * //4.2 最大载人数量 mixNumberPeople
- * 5. 类型（载客车，载货车，皮卡车.）typeOfCar
- * -------------------
- * 非构造
- * 6. 个数 numberOfCars
- * 7. 租车天数  rentalDays
- * 8. 总价格.  totalPrice
-```
-#### 2. 数据层 初始化 车的数据(DateOfCar.java)
-1.储存8种车的对象
-2.将8种车的对象储存到HashMap集合里 hashMap
-
-#### 3. 逻辑层实现逻辑 (BuyCar.java)
-
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200518104808659.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
+#### 3. 逻辑层，buyCar
 1. 展示车.
 2. 选择车
-2。2. 是否继续？
+2.2. 是否继续？
 3. 结算
-#### 4. 效果：
-```$xslt
-车辆序号: 1、名称: 小轿车、费用: 40、载人最大数量：4
-车辆序号: 2、名称: 面包车、费用: 65、载人最大数量：7
-车辆序号: 3、名称: 大巴车、费用: 180、载人最大数量：20
-车辆序号: 4、名称: 低栏车、费用: 30、载货最大重量量：1.5
-车辆序号: 5、名称: 高栏车、费用: 47、载货最大重量量：2.5
-车辆序号: 6、名称: 厢式车、费用: 80、载货最大重量量：4.5
-车辆序号: 7、名称: 日式皮卡车、费用: 60、载人最大数量：5、载货最大重量量：1.0
-车辆序号: 8、名称: 美式皮卡车、费用: 60、载人最大数量：2、载货最大重量量：3.0
-请输入你要租借的车的序号，回车键确认
-1
-请输入你租借的车的数量，回车确认
-1
-请输入你租借的车的时间(天数)，回车确认
--1
-你输入的数据有误
-请输入你要租借的车的序号，回车键确认
-1
-请输入你租借的车的数量，回车确认
-1
-请输入你租借的车的时间(天数)，回车确认
-3
-恭喜，订购成功！
-序号：1、数量：1、租期：3
----
-您要继续借车么(y/n)?
-y
-请输入你要租借的车的序号，回车键确认
-1
-请输入你租借的车的数量，回车确认
-1
-请输入你租借的车的时间(天数)，回车确认
-6
-恭喜，订购成功！
-序号：1、数量：1、租期：6
----
-您要继续借车么(y/n)?
-n
-1号载客车 数量: 1，租期：6（天），租金：240（元）
-总体租用车辆总数: 1（辆）
-总体租车的最大载人: 4（个）
-总体租车的最大载货：0.0（吨）
-总体租车费用: 240（元）
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200518104808659.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
+### 三、解决的问题：
 
-Process finished with exit code 0
+#### 逻辑层的实现并没有实现可拓展性,HashMap 储值后就，必须使用相应的序号拿出，而不是通过自动的比较,导致数据层就白搭了
 
-```
+1. 解决方案1 ：3种车继承 Vehicle 交通工具类，然后构造的时候传入3种车车型，调用的时候先遍历对应的数字，然后强转Vehicle，get 车型，根据对应的车型再强转对应的3种车型中的一种，实现代码的简化和数据层的可复用.(**导入新的问题**，继承的使用导致了该类无法继承其他类，拓展性降低)
 
-### 二、类图：
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200518195224164.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
+2. 解决方案2：使用草鸡大类 Vehicle 拥有 之前3种车的所有字段.
+构造的时候全部构造，不能载物或者人的就给0 就可以了.
