@@ -35,52 +35,102 @@
 
 ### 三、效果展示
 #### 1.启动服务器
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200604173419663.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
+
 #### 2.启动User01，张三
+
 1.User01
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200604195743758.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
+
 2.服务器
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200604173511201.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
+
 #### 3.启动User02
+
 1.User02：
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200604200004150.png)
+
 2.User01
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020060420003323.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
 
+
 #### 4.启动User03
+
 1.User03
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020060417365074.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
+
 2.User02
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200604173713834.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
+
 3.User01
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200604173729999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
 
 
+
+
+
 #### 5.来自张三User01的群发：
+
 1.User01
+
+
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200604201016915.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
+
+
 2.User02
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200604173931750.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
+
 3.User03
+
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200604173948325.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
+
 #### 6.来自李四User02的私聊
+
 1.User02
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200604200354711.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
+
+
 2.User01张三
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200604174227915.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
 3.User03
+
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200604174304551.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
-#### 7.王二麻子User03一怒之下退出群聊
+
+
 1.User03
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200604201057298.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
-2.User02
+
+
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020060420143618.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
+
 3.User01
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2020060420145424.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
+
+
+
 ### 四、问题：
+
+
 #### 1. 服务端发送端口阻塞问题，因为多线程同时访问了端口，
+
 >解决：强制使用多个端口，解决，求更好的方法
 
+
 #### 2.客户端首次登入有时无法收到服务器的提示上线信息？HashMap是添加成功的，原因未知.
+
 >难道是UDP的丢包导致？下次用TCP试试
 
