@@ -42,6 +42,7 @@ private byte[] bytes ;
             }
 
             System.out.println(sourceUser + " 添加成功");
+
         }
         //(2)删除用户
         else if (split[4].contains("-1")){
@@ -111,5 +112,6 @@ private byte[] bytes ;
             System.out.println(sourceUser+" 私聊成功");
 
         }
+
     }
 }

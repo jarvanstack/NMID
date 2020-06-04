@@ -11,12 +11,11 @@ import java.util.Scanner;
  * (1)user类使用接受方法recieve()，开启一个多线程阻塞接受信息
  */
 public class User01 {
-
+    private static User user01 = new User("张三", "localhost", 1001,1011);
     public static void main(String[] args) {
         /**
          * (1)new User(),
          */
-        User user01 = new User("张三", "localhost", 1001,1011);
         String message;
         String destinationId;
         Scanner scanner = new Scanner(System.in);
