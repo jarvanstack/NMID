@@ -99,17 +99,22 @@ private byte[] bytes ;
         //（4）私发
         else{
             for (Integer key : Server.users.keySet()) {
-                if (key.toString().contains(split[4])){
-                    System.out.println("目标id ："+split[4]);
+                if (key.toString().contains(split[4])) {
+                    System.out.println("目标id ：" + split[4]);
                     String[] users = Server.users.get(key).split("@");
 
                     Server.executorService.submit(new ServerSend(users[0],
                             Integer.parseInt(users[1]),
                             //发送传入的信息 message
-                            "### "+split[2]+"对你的私聊: "+split[3]));
+                            "### " + split[2] + "对你的私聊: " + split[3]));
                 }
             }
-            System.out.println(sourceUser+" 私聊成功");
+            //返回原发送人发送成功的信息
+            Server.executorService.submit(new ServerSend(split[0],
+                    Integer.parseInt(split[1]),
+                    (split[3] + " 发送成功")
+            ));
+            System.out.println(sourceUser + " 私聊成功");
 
         }
 

@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
  */
 public class Server {
     public static ExecutorService executorService = Executors.newFixedThreadPool(10);
-    public static HashMap<Integer,String> users = new HashMap<>();
+    public static HashMap<Integer, String> users = new HashMap<>();
     public static int countUser = 0;
 
     /**
@@ -23,30 +23,30 @@ public class Server {
      * 3.while true 阻塞接受
      * 4.判断发送消息的多线程JudgeAndSendMessage。
      */
-    private static void recieve(){
+    private static void recieve() {
         executorService.submit(new Runnable() {
             @Override
             public void run() {
                 //声明定义分离
-                DatagramSocket datagramSocket ;
-                DatagramPacket datagramPacket ;
+                DatagramSocket datagramSocket;
+                DatagramPacket datagramPacket;
                 try {
                     //1.
                     datagramSocket = new DatagramSocket(2000);
                     //2.
                     byte[] bytes = new byte[1020 * 10];
                     byte[] toJudgebytes = new byte[1020 * 10];
-                    datagramPacket = new DatagramPacket(bytes,0,bytes.length);
+                    datagramPacket = new DatagramPacket(bytes, 0, bytes.length);
                     System.out.println("Server: 启动成功，");
                     //3.
-                    while (true){
+                    while (true) {
                         //阻塞接受
                         System.out.println("Server: 等待数据.");
                         datagramSocket.receive(datagramPacket);
                         //4.4.判断发送消息的多线程JudgeAndSendMessage。
-                        toJudgebytes = new String(datagramPacket.getData(),0,datagramPacket.getLength()).getBytes();
+                        toJudgebytes = new String(datagramPacket.getData(), 0, datagramPacket.getLength()).getBytes();
                         executorService.submit(new JudgeAndSendMessage(toJudgebytes));
-                        System.out.println("Server: 接受数据: "+new String(datagramPacket.getData(),0,datagramPacket.getLength()));
+                        System.out.println("Server: 接受数据: " + new String(datagramPacket.getData(), 0, datagramPacket.getLength()));
 
                     }
 
@@ -59,6 +59,7 @@ public class Server {
             }
         });
     }
+
     public static void main(String[] args) {
         recieve();
     }

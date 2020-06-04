@@ -22,11 +22,26 @@ public class User02 {
         Scanner scanner = new Scanner(System.in);
         user02.recieve();
         while (true){
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println("-- 您要发送的信息:");
             message = scanner.nextLine();
             System.out.println("-- 你要发送用户的id:");
             destinationId = scanner.nextLine();
-            user02.sendMessageToServer(message,destinationId,user02);
+            user02.sendMessageToServer(message, destinationId, user02);
+            if (destinationId.contains("-1")) {
+                System.out.println("-- 退出聊天");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("-- 退出成功");
+                System.exit(0);
+            }
         }
     }
 }

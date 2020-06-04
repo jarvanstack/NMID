@@ -31,19 +31,19 @@ public class Recieve implements Runnable {
             datagramSocket = new DatagramSocket(recievePort);
             //2.
             byte[] bytes = new byte[1024 * 10];
-            datagramPacket = new DatagramPacket(bytes,0,bytes.length);
+            datagramPacket = new DatagramPacket(bytes, 0, bytes.length);
             //3.
-            while (true){
+            while (true) {
                 datagramSocket.receive(datagramPacket);
-                String printMessage = new String(datagramPacket.getData(),0,datagramPacket.getLength())  ;
+                String printMessage = new String(datagramPacket.getData(), 0, datagramPacket.getLength());
                 System.out.println(printMessage);
             }
         } catch (SocketException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            if (datagramSocket != null){
+        } finally {
+            if (datagramSocket != null) {
                 datagramSocket.close();
             }
         }

@@ -16,7 +16,7 @@ public class User {
     private int acceptPort;
     private int sendPort;
 
-    public User(String name, String ip, int acceptPort,int sendPort) {
+    public User(String name, String ip, int acceptPort, int sendPort) {
         this.name = name;
         this.ip = ip;
         this.acceptPort = acceptPort;
@@ -25,33 +25,34 @@ public class User {
         this.age = 0;
         sendBasicInformationToServer();
     }
+
     /**
      * 自动发送基本信息.
-     *
      */
-    private void sendBasicInformationToServer(){
+    private void sendBasicInformationToServer() {
         //多线程发送
-        String messageTotal= ""+this.getIp()+"@"+this.getAcceptPort()+"@"+this.getName()+"@"+"null"+"@"+"basicInformation" ;
-        executorService.submit(new Send(messageTotal.getBytes(),this.sendPort));
+        String messageTotal = "" + this.getIp() + "@" + this.getAcceptPort() + "@" + this.getName() + "@" + "null" + "@" + "basicInformation";
+        executorService.submit(new Send(messageTotal.getBytes(), this.sendPort));
     }
 
     /**
-     *
      * @param message 信息
-     * @param user 用户
+     * @param user    用户
      */
-    public void sendMessageToServer(String message,String destinationId, User user){
-        message = user.getIp()+"@"+user.getAcceptPort()+"@"+user.getName()+"@"+message+"@"+destinationId;
-        executorService.submit(new Send(message.getBytes(),sendPort));
+    public void sendMessageToServer(String message, String destinationId, User user) {
+        message = user.getIp() + "@" + user.getAcceptPort() + "@" + user.getName() + "@" + message + "@" + destinationId;
+        executorService.submit(new Send(message.getBytes(), sendPort));
     }
 
     /**
      * 接受 信息
+     *
      * @return
      */
-    public void recieve(){
+    public void recieve() {
         executorService.submit(new Recieve(this.acceptPort));
     }
+
     public String getName() {
         return name;
     }

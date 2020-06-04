@@ -11,7 +11,7 @@ import java.util.Random;
  */
 public class ServerSend implements Runnable {
     private String ip;
-    private int port ;
+    private int port;
     private String message;
 
     public ServerSend(String ip, int port, String message) {
@@ -34,11 +34,11 @@ public class ServerSend implements Runnable {
         DatagramPacket datagramPacket;
         try {
             //1.
-            datagramSocket = new DatagramSocket(2010+new Random().nextInt(1000));
+            datagramSocket = new DatagramSocket(2010 + new Random().nextInt(1000));
             //2.打包
             datagramPacket = new DatagramPacket(
                     message.getBytes(),
-                    0,message.getBytes().length,
+                    0, message.getBytes().length,
                     InetAddress.getByName(ip),
                     port);
             //3.发送
@@ -50,9 +50,9 @@ public class ServerSend implements Runnable {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             //4.
-            if (datagramSocket != null){
+            if (datagramSocket != null) {
                 datagramSocket.close();
             }
         }

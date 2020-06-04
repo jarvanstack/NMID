@@ -42,10 +42,10 @@ public class Send implements Runnable {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             //4.close
-            if (datagramSocket != null){
-            datagramSocket.close();
+            if (datagramSocket != null) {
+                datagramSocket.close();
             }
         }
     }
