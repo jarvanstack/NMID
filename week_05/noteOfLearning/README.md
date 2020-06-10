@@ -77,3 +77,7 @@ B + 树（B+ Tree）是 B-Tree的升级版，性能更好：
 
 具体查看我的博客
 https://blog.csdn.net/jarvan5/article/details/106644032
+
+### 十、一个好的数据库结构
+这份图是早期的MySQL手册的示例图，用来参考它的结构。（==现在不建议使用外键，外键的效果用程序实现，==）
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200610200805475.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phcnZhbjU=,size_16,color_FFFFFF,t_70)
