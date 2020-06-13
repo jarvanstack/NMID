@@ -15,12 +15,16 @@
 1. 编程作业[点击跳转](https://github.com/dengjiawen8955/NMID/tree/master/week_03/programmingWork)
 2. 笔记[点击跳转](https://github.com/dengjiawen8955/NMID/tree/master/week_03/noteOfLearning)
 
-#### 4.第三周week_04
+#### 4.第四周week_04
 
 1. 编程作业[点击跳转](https://github.com/dengjiawen8955/NMID/tree/master/week_04/programmingWork)
 2. 笔记[点击跳转](https://github.com/dengjiawen8955/NMID/tree/master/week_04/noteOfLearning)
 
-#### 5.第三周week_05
+#### 5.第五周week_05
 
 1. 编程作业[点击跳转](https://github.com/dengjiawen8955/NMID/tree/master/week_05/programmingWork)
 2. 笔记[点击跳转](https://github.com/dengjiawen8955/NMID/tree/master/week_05/noteOfLearning)
+#### 6.第六周week_06
+
+1. 编程作业[点击跳转](https://github.com/dengjiawen8955/NMID/tree/master/week_06/programmingWork)
+2. 笔记[点击跳转](https://github.com/dengjiawen8955/NMID/tree/master/week_06/noteOfLearning)
