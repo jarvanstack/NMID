@@ -26,5 +26,5 @@
 2. 笔记[点击跳转](https://github.com/dengjiawen8955/NMID/tree/master/week_05/noteOfLearning)
 #### 6.第六周week_06
 
-1. 编程作业[点击跳转](https://github.com/dengjiawen8955/NMID/tree/master/week_06/programmingWork)
+1. 编程作业(无)[点击跳转](https://github.com/dengjiawen8955/NMID/tree/master/week_06/programmingWork)
 2. 笔记[点击跳转](https://github.com/dengjiawen8955/NMID/tree/master/week_06/noteOfLearning)
